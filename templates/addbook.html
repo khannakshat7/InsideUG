@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container my-4">
 {% if user.is_superuser %}
-<h1>Add Course</h1>
+<h1>Add Book</h1>
 {% if msg %}
 <div class="alert alert-success" role="alert">
   {{ msg }}
@@ -14,7 +14,7 @@
   {{ err }}
 </div>
 {% endif %}
-<form action="{% url 'addcourse' %}" method="POST" enctype="multipart/form-data">
+<form action="{% url 'addbook' %}" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Course</label>
       <select class="form-control" name="course" id="exampleFormControlSelect1">
@@ -51,7 +51,7 @@
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="http://google.com" name="link" required>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlFile1">Image small (width:306px height:156px)</label>
+        <label for="exampleFormControlFile1">Image small (width:306px height:319px)</label>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imgsmall" accept=".svg" required>
     </div><br>
     <div class="form-group">

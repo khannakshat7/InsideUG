@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
 
 from InsideUGApp.forms import UserForm
-from InsideUGApp.models import Course
+from InsideUGApp.models import Course,Books
 # Create your views here.
 
 def index(request):
@@ -21,30 +21,67 @@ def category(request,cat):
 @csrf_exempt
 def addcourse(request):
     if(request.method == 'POST'):
-        stream = request.POST.get('course')
-        branch = request.POST.get('branch')
-        title = request.POST.get('title')
-        disc = request.POST.get('disc')
-        imageSmall = request.FILES['imgsmall']
-        imageBig = request.FILES['imgbig']
-        print(stream,branch,title,disc,imageSmall,imageBig)
-        course = Course()
-        course.stream = stream
-        course.branch = branch
-        course.title = title
-        course.discription = disc
-        course.smallImage = imageSmall
-        course.BigImage = imageBig
-        course.save() 
-        return HttpResponse("Done")
+        try:
+            stream = request.POST.get('course')
+            branch = request.POST.get('branch')
+            title = request.POST.get('title')
+            disc = request.POST.get('disc')
+            link = request.POST.get('link')
+            imageSmall = request.FILES['imgsmall']
+            imageBig = request.FILES['imgbig']
+            
+            course = Course()
+            course.stream = stream
+            course.branch = branch
+            course.title = title
+            course.link = link
+            course.discription = disc
+            course.smallImage = imageSmall
+            course.BigImage = imageBig
+            course.save() 
+            data = {
+                "msg": "The course added successfully!!"
+            }
+        except:
+            data = {
+                "err": "An error occured in adding the course"
+            }
+        return render(request,'addcourse.html',data)
     else:
         return render(request,'addcourse.html')
 
+@csrf_exempt
 def addbook(request):
     if(request.method == 'POST'):
-        pass
+        try:
+            stream = request.POST.get('course')
+            branch = request.POST.get('branch')
+            title = request.POST.get('title')
+            disc = request.POST.get('disc')
+            link = request.POST.get('link')
+            imageSmall = request.FILES['imgsmall']
+            imageBig = request.FILES['imgbig']
+            
+            book = Books()
+            book.stream = stream
+            book.branch = branch
+            book.title = title
+            book.link = link
+            book.discription = disc
+            book.smallImage = imageSmall
+            book.BigImage = imageBig
+            book.save() 
+            data = {
+                "msg": "The Book added successfully!!"
+            }
+        except:
+            data = {
+                "err": "An error occured in adding the Book!!"
+            }
+        return render(request,'addbook.html',data)
     else:
         return render(request,'addbook.html')
+
 
 def addnews(request):
     if(request.method == 'POST'):
