@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+{% if user.is_superuser %}
+<h1>Add Course</h1>
+<form action="{% url 'addcourse' %}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Course</label>
+      <select class="form-control" name="course" id="exampleFormControlSelect1">
+        <option value="btech">B.Tech</option>
+        <option value="bsc">B.Sc</option>
+        <option value="bba">BBA</option>
+        <option value="ba">BA</option>
+        <option value="bl">B.Law</option>
+        <option value="mbbs">MBBS</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Branch</label>
+        <select class="form-control" name="branch" id="exampleFormControlSelect1">
+          <option value="cse">CSE</option>
+          <option value="ece">ECE</option>
+          <option value="eee">EEE</option>
+          <option value="mech">Mechanical</option>
+          <option value="civil">Civil</option>
+          <option value="chem">Chemical</option>
+          <option value="biotech">Bio Tech</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Google" name="title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Discription</label>
+      <textarea class="form-control" name="disc" id="exampleFormControlTextarea1" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Image small file</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imgsmall">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile2">Image Big file</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile2" name="imgbig">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>   
+{% else %}
+<h3>Access Denied</h3>
+{% endif %}
+</div>
+{% endblock %}

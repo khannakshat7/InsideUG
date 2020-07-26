@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-3 text-center" style="border-right: 1px solid #E7E7E7;">
+                <div class="my-2 p-4 px-4 text-left">
+                    <b>Filters</b>
+                    <hr style="border-top: 1px dashed #F0486A;">
+                    <p class="greenshade"><b>Course</b></p>
+                    <div>
+                        <form action="" method="POST">
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="btech" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Bachelor of Eng./Tech</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="bsc" class="form-check-input" id="exampleCheck2">
+                                <label class="form-check-label" for="exampleCheck2">Bachelor of Science</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="bba" class="form-check-input" id="exampleCheck3">
+                                <label class="form-check-label" for="exampleCheck3">BMS/BBA/BBS</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="ba" class="form-check-input" id="exampleCheck4">
+                                <label class="form-check-label" for="exampleCheck4">Bachelor of Arts</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="bl" class="form-check-input" id="exampleCheck5">
+                                <label class="form-check-label" for="exampleCheck5">Bachelor of Law</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="mbbs" class="form-check-input" id="exampleCheck6">
+                                <label class="form-check-label" for="exampleCheck6">MBBS</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary nav-button">Filter</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col">
+                            <img class="w-100 mr-2" src="{% static 'img/categoryback.svg' %}" alt="">
+                            <h2 class="heading more px-5" style="margin-top: -80px;">Top Courses</h2>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0">
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0">
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0">
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0">
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0"  >
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0"  >
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0"  >
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0"  >
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-prop m-0"  >
+                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p>Engineering</p>
+                                <h4 class="heading">Digital Marketing Certification by Google</h4>
+                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                <p class="d-inline"> Most Enrolled</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

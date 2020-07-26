@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'gilroy-bold';
+    src: url('./fonts/gilroy-bold-webfont.woff2') format('woff2'),
+         url('./fonts/gilroy-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy-heavy';
+    src: url('./fonts/gilroy-heavy-webfont.woff2') format('woff2'),
+         url('./fonts/gilroy-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy-light';
+    src: url('./fonts/gilroy-light-webfont.woff2') format('woff2'),
+         url('./fonts/gilroy-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy-medium';
+    src: url('./fonts/gilroy-medium-webfont.woff2') format('woff2'),
+         url('./fonts/gilroy-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gilroy';
+    src: url('./fonts/gilroy-regular-webfont.woff2') format('woff2'),
+         url('./fonts/gilroy-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.nav{
+    background: #FFFFFF;
+    box-shadow: 0px 8px 16px rgba(18, 18, 18, 0.06);
+}
+.cat,.cat:hover,.cat:active,.cat:target{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+.logo{
+    font-size: 36px;
+    line-height: 45px;
+}
+.nav-itm{
+    font-weight: 600;
+}
+.heading-hero{
+    font-family: gilroy-bold;
+    font-size: 3em;
+}
+.heading{
+    font-family: gilroy-bold;
+}
+.subtitle{
+    color: rgba(60, 72, 82, 0.4);
+    font-size: 1.5em;
+    font-family: Gilroy-Medium;
+    font-style: normal;
+    font-weight: normal;
+}
+.nav-button,.nav-button:hover,.nav-button:focus,.nav-button:active{
+    background: #F0486A;
+    border-radius: 6px;
+    border: none;
+}
+.lead{
+    font-size: 1rem;
+}
+.link, .link:hover, .link:active{
+    text-decoration: none;
+}
+.greenshade{
+    color: #F0486A;
+}
+
+.hero-img{
+    width: 700px;
+    height: 350px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), url(image.png);
+    border-radius: 12px;
+}
+
+.btn-width{
+    width: 20%;
+    height: 2.5em;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+}
+.catagories{
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+.tile{
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    margin-top: -20px;
+}
+.more{
+    color: white;
+}
+.more p{
+    margin-top: -130px;
+}
+.card-prop{
+    box-shadow: 0px 8px 16px rgba(18, 18, 18, 0.08);
+    border-radius: 12px;
+}
+.card-img-top{
+    border-radius: 5% 5% 0 0;
+}
+.course-more p{
+    text-align: center;
+    color: white;
+    margin-top: -200px;
+}
+.sec{
+    margin-bottom: 5%;
+}
+.icon{
+    font-size: 24px;
+}
+.search-input{
+    height: 2em;
+}
+/* Login CSS */
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background: #F0486A;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #F0486A;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #F0486A;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #F0486A;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+@media only screen and (min-width: 992px){
+    .container{
+        margin-left: 75px;
+        margin-right: 75px;
+        max-width: 90%;
+    }
+
+}
+
+@media(max-width: 600px){
+    .btn-width {
+        width: 20%;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+    }
+
+}
+
+

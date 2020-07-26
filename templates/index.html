@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsideUG</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/2f18b63e9f.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 nav">
+    <div class="container p-0 mw-100">
+      <a class="navbar-brand heading logo" href="{% url 'index' %}">Inside<span class="greenshade">UG</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item nav-itm mx-4">
+            <a class="nav-link" href="#courses">Courses</a>
+          </li>
+          <li class="nav-item nav-itm mx-4">
+            <a class="nav-link" href="#books">Books</a>
+          </li>
+          <li class="nav-item nav-itm mx-4">
+            <a class="nav-link" href="#news">News</a>
+          </li>
+        </ul>
+        {% if user.is_authenticated %}
+          <p class="greenshade m-0" style="font-weight: 600;">Welcome, {{ user }}</p><form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'logout' %}">
+            <button class="btn btn-secondary my-2 my-sm-0 nav-button" type="submit">Logout</button>
+          </form>
+        {% else %}
+        <form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'login' %}">
+          <button class="btn btn-secondary my-2 my-sm-0 nav-button" type="submit">Join Community</button>
+        </form>
+        {% endif %}
+        
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <section class="fdb-block my-5">
+
+      <div class="row align-items-center">
+        <div class="col-12 col-md-7 col-lg-7 col-xl-5">
+          <h1 class="heading-hero">Enroll top Certifications</h1>
+          <p class="subtitle mb-5">India’s all in one platform for UG students</p>
+        </div>
+        <div class="col-12 col-md-5 m-auto ml-lg-auto mr-lg-0 col-lg-5 pt-5 pt-lg-0">
+          <div class="hero-slider">
+            <img class="w-100" src="{% static 'img/hero.svg' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="row my-5 py-5">
+      <div class="col-md-2 text-center">
+        <a class="cat" href="category/Engineering/">
+          <div class="catagories">
+            <img class="mw-100" src="{% static 'img/engineering.svg' %}" alt=""><br>
+          </div>
+          <div class="shadow p-2 mx-3 rounded tile">
+            Engineering
+          </div>
+        </a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a class="cat" href="category/Management/">
+        <div class="catagories">
+          <img class="mw-100" src="{% static 'img/management.svg' %}" alt="">
+        </div>
+        <p class="shadow p-2 mx-3 bg-white rounded tile">
+          Management
+        </p>
+        </a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a class="cat" href="category/Law/">
+        <div class="catagories">
+          <img class="mw-100" src="{% static 'img/law.svg' %}" alt="">
+        </div>
+        <p class="shadow p-2 mx-3 bg-white rounded tile">
+          Law
+        </p>
+        </a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a class="cat" href="category/Humanities/">
+        <div class="catagories">
+          <img class="mw-100" src="{% static 'img/human.svg' %}" alt="">
+        </div>
+        <p class="shadow p-2 mx-3 bg-white rounded tile">
+          Humanities
+        </p>
+        </a>
+      </div>
+      <div class="col-md-2 text-center">
+        <a class="cat" href="category/Commerce/">
+        <div class="catagories">
+          <img class="mw-100" src="{% static 'img/commerce.svg' %}" alt="">
+        </div>
+        <p class="shadow p-2 mx-3 bg-white rounded tile">
+          Commerce
+        </p>
+        </a>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="more">
+          <img class="mw-100" src="{% static 'img/more.svg' %}" alt="">
+          <p class="">
+            More
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="sec" id="courses">
+      <h1 class="heading">Courses & Certifications</h1><p class="float-right"><a class="link" href="{% url 'courses' %}">View More</a></p><br>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <p>Engineering</p>
+              <h4 class="heading">Digital Marketing Certification by Google</h4>
+              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec" id="books">
+      <h1 class="heading">Top Books</h1><p class="float-right"><a class="link" href="{% url 'books' %}">View More</a></p><br>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-prop m-0"   >
+            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
+            
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="sec">
+    <h1 class="heading"><span class="greenshade">LIVE </span>1:1 Mock Interviews by experts</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="mw-100" src="{% static 'img/mockinterview.svg' %}" alt="">
+      </div>
+      <div class="col-md-6">
+        <div class="mx-5 mt-5">
+          <img class="mw-100 mb-2" src="{% static 'img/greentick.svg' %}" alt=""><div class="d-inline ml-5">Confidence Boosting</div>
+        </div>
+        <div class="mx-5 mt-4">
+          <img class="mw-100 mb-2" src="{% static 'img/greentick.svg' %}" alt=""><div class="d-inline ml-5">In Depth Interview analysis</div>
+        </div>
+        <div class="mx-5 mt-4">
+          <img class="mw-100 mb-2" src="{% static 'img/greentick.svg' %}" alt=""><div class="d-inline ml-5">Mastering questions from A to Z</div>
+        </div>
+        <div class="mx-5 mt-4">
+          <img class="mw-100 mb-2" src="{% static 'img/greentick.svg' %}" alt=""><div class="d-inline ml-5">Preparing you for the real world</div>
+        </div>
+        <div class="mx-5 mt-5">
+          <button class="w-100 p-2" style="background-color: #F0486A;color:white;border: 0;">
+            Know More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec" id="news">
+    <h1 class="heading">Top Pick Articles</h1><p class="float-right"><a class="link" href="{% url 'news' %}">View More</a></p><br>
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card-prop m-0"   >
+          <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+          <div class="card-body">
+            <h4 class="heading">Digital Marketing Certification by Google</h4>
+            <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+            
+             
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-prop m-0"   >
+          <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+          <div class="card-body">
+            <h4 class="heading">Digital Marketing Certification by Google</h4>
+            <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+            
+             
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-prop m-0"   >
+          <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+          <div class="card-body">
+            <h4 class="heading">Digital Marketing Certification by Google</h4>
+            <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+            
+             
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card-prop m-0"   >
+          <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
+          <div class="card-body">
+            <h4 class="heading">Digital Marketing Certification by Google</h4>
+            <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <footer class="fdb-block footer-large p-5 text-white" style="background-color: #F0486A;">
+    <div class="container">
+      <div class="row align-items-top text-center">
+
+        <div class="col-12 col-md-4 col-lg-6 text-md-left mt-5 mt-md-0">
+          <h1 class="heading"><strong>About Us</strong></h1>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aut ea maiores vero sed ex?
+            Temporibus,
+            molestiae. Impedit doloribus corporis tenetur commodi pariatur maiores sint optio ea. Commodi, quae enim.
+          </p>
+        </div>
+
+        <div class="col-12 col-lg-6 ml-auto text-lg-left mt-4 mt-lg-0">
+          <div class="mb-3 text-left">
+            <div class="d-inline mr-3">Home</div>
+            <div class="d-inline mx-3">Courses</div>
+            <div class="d-inline mx-md-3">Certifications</div>
+            <div class="d-inline mx-md-3">Books</div>
+          </div>
+          <br>
+          <h4><strong>Connect with us</strong></h4>
+          <p>contact@insideug.com</p>
+          <p class="lead">
+            <a href="#" class="mx-2 text-white icon"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="#" class="mx-2 text-white icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="mx-2 text-white icon"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="mx-2 text-white icon"><i class="fa fa-google" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col text-center">
+          © 2020 InsideUG. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+</body>
+
+</html>
