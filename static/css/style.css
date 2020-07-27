@@ -4,6 +4,7 @@
          url('./fonts/gilroy-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'gilroy-heavy';
@@ -11,6 +12,7 @@
          url('./fonts/gilroy-heavy-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'gilroy-light';
@@ -18,6 +20,7 @@
          url('./fonts/gilroy-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'gilroy-medium';
@@ -25,6 +28,7 @@
          url('./fonts/gilroy-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'gilroy';
@@ -32,6 +36,7 @@
          url('./fonts/gilroy-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 html {
     scroll-behavior: smooth;
