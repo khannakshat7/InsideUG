@@ -48,129 +48,26 @@
                             <h2 class="heading more px-5" style="margin-top: -80px;">{{ category }}</h2>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
+                {% for course in courses %}
+                        {% if forloop.first %}<div class="row mt-5">{% endif %}
+                            <div class="col-md-4">
+                                <a class="cat" href="{{course.link}}" target="blank">
+                                <div class="card card-prop m-0">
+                                    <img src="../../media/{{course.smallImage}}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <p>{{course.stream}}</p>
+                                        <h4 class="heading">{{course.title}}</h4>
+                                        <br>
+                                        <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                        <p class="d-inline"> Most Enrolled</p>
+        
+                                    </div>
+                                </div>
+                            </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0"  >
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0"  >
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0"  >
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0"  >
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0"  >
-                            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <p>Engineering</p>
-                                <h4 class="heading">Digital Marketing Certification by Google</h4>
-                                <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-                                <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
-                                <p class="d-inline"> Most Enrolled</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        {% if forloop.counter|divisibleby:3 %}</div><div class="row mt-5">{% endif %}
+                        {% if forloop.last %}</div>{% endif %}
+                    {% endfor %}
             </div>
         </div>
     </div>

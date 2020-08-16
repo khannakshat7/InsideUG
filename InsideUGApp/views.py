@@ -10,13 +10,17 @@ def index(request):
     return render(request,'index.html')
 
 def books(request):
-    return render(request,'books.html')
+    all_books = Books.objects.all()
+    return render(request,'books.html',{"books":all_books})
 
 def courses(request):
-    return render(request,'courses.html')
+    all_course = Course.objects.all()
+    return render(request,'courses.html',{"courses":all_course})
 
 def category(request,cat):
-    return render(request,'catagories.html',{"category":cat})
+    if(cat=='Engineering'):
+        cat_course = Course.objects.filter(stream='btech')
+    return render(request,'catagories.html',{"category":cat,"courses":cat_course})
 
 @csrf_exempt
 def addcourse(request):
@@ -119,8 +123,9 @@ def register(request):
             user.is_active = True
             user.save()
             registeredcheck = True
+            login(request,user)
             msg={"message":True}
-            return render(request,'login.html')
+            return redirect('/')
         else:
             error={"error":True}
             return render(request,"login.html",error)

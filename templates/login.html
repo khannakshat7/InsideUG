@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %} 
 {% load static %}
 {% block content %}
 <div class="container login-container">
     <div class="row">
-        <div class="col-md-6 login-form-1">
+        <div class="col-md-6 login-form-1 text-center">
             <h3>Register</h3>
             <form action="../register/" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username *" />
+                    <input type="email" class="form-control" name="username" placeholder="Your Email *" required/>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Your Email *" />
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Your Password *" />
+                    <input type="password" class="form-control" name="password" placeholder="Your Password *" required/>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btnSubmit" value="Register" />
@@ -22,15 +21,15 @@
                 
             </form>
         </div>
-        <div class="col-md-6 login-form-2">
+        <div class="col-md-6 login-form-2 text-center">
             <h3>Login</h3>
             <form action="../login/" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Your Username *" value="" />
+                    <input type="email" class="form-control" name="username" placeholder="Your Email *" value="" required />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Your Password *" value="" />
+                    <input type="password" class="form-control" name="password" placeholder="Your Password *" value="" required />
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btnSubmit" value="Login" />
@@ -38,9 +37,36 @@
                 <div class="form-group">
 
                     <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                </div>
+                </div><hr><h3>OR</h3>
             </form>
+            
+            <div class="row">
+                <div class="col-6 ml-auto">
+                    <a href="{% provider_login_url 'facebook' method='oauth2' %}">
+                    <button class="loginBtn loginBtn--facebook">
+                        Login with Facebook
+                    </button>
+                    </a>
+                </div>
+                <div class="col-6 mr-auto">
+                    <a href="{% provider_login_url 'google' %}">
+                    <button class="loginBtn loginBtn--google">
+                        Login with Google
+                    </button> 
+                    </a>
+                </div>
+            </div>
+            
+              
         </div>
     </div>
 </div>
+{% endblock %}
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js" integrity="sha512-8vfyGnaOX2EeMypNMptU+MwwK206Jk1I/tMQV4NkhOz+W8glENoMhGyU6n/6VgQUhQcJH8NqQgHhMtZjJJBv3A==" crossorigin="anonymous"></script>
+{% if invalid %}
+  <script>
+    bootbox.alert("<p style='color:red'>Incorrect Password!</p>");
+</script>
+{% endif %}
 {% endblock %}
