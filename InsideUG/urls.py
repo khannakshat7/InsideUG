@@ -34,6 +34,7 @@ urlpatterns = [
     path('addcourse/', views.addcourse, name='addcourse'),
     path('addbook/', views.addbook, name='addbook'),
     path('addnews/', views.addnews, name='addnews'),
+    path('mba/', views.MBAFile, name='MBAFile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

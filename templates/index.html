@@ -35,7 +35,7 @@
           </li>
         </ul>
         {% if user.is_authenticated %}
-          <p class="greenshade m-0" style="font-weight: 600;">Welcome, {{ user }}</p><form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'logout' %}">
+          <p class="greenshade m-0" style="font-weight: 600;">Welcome, {{ user.email }}</p><form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'logout' %}">
             <button class="btn btn-secondary my-2 my-sm-0 nav-button" type="submit">Logout</button>
           </form>
         {% else %}
@@ -126,164 +126,42 @@
     </div>
     <div class="sec" id="courses">
       <h1 class="heading">Courses & Certifications</h1><p class="float-right"><a class="link" href="{% url 'courses' %}">View More</a></p><br>
-      <br>
-      <div class="row">
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-      </div>
-<br>
-      <div class="row d-none d-md-flex">
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/course.svg' %}" class="card-img-top" alt="">
-            <div class="card-body">
-              <p>Engineering</p>
-              <h4 class="heading">Digital Marketing Certification by Google</h4>
-              <p class="lead d-inline">Posted on 2-07-20 • 11:30PM</p><br><br>
-              <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt=""><p class="d-inline"> Most Enrolled</p>
-               
-            </div>
-          </div>
-        </div>
-      </div>
+      {% for course in courses %}
+                        {% if forloop.first %}<div class="row">{% endif %}
+                            <div class="col-md-3">
+                                <a class="cat" href="{{course.link}}" target="blank">
+                                <div class="card card-prop m-0">
+                                    <img src="../media/{{course.smallImage}}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <p>{{course.stream}}</p>
+                                        <h4 class="heading">{{course.title}}</h4>
+                                        <br>
+                                        <img class="mb-2" src="{% static 'img/mostenrolled.svg' %}" alt="">
+                                        <p class="d-inline"> Most Enrolled</p>
+        
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        {% if forloop.counter|divisibleby:4 %}</div><br><div class="row">{% endif %}
+                        {% if forloop.last %}</div>{% endif %}
+                    {% endfor %}
     </div>
     <div class="sec" id="books">
       <h1 class="heading">Top Books</h1><p class="float-right"><a class="link" href="{% url 'books' %}">View More</a></p><br>
       <br>
-      <div class="row">
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-        <div class="col-md-3 my-3 my-md-0">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-      </div>
-<br>
-      <div class="row d-none d-md-flex">
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-prop m-0"   >
-            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-            
-          </div>
-        </div>
-      </div>
+      {% for book in books %}
+                        {% if forloop.first %}<div class="row">{% endif %}
+                            <div class="col-md-3">
+                                <a class="cat" href="{{book.link}}" target="blank">
+                                <div class="card card-prop m-0">
+                                    <img src="../media/{{book.smallImage}}" class="card-img-top" alt="">
+                                </div>
+                            </a>
+                            </div>
+                        {% if forloop.counter|divisibleby:4 %}</div><br><div class="row">{% endif %}
+                        {% if forloop.last %}</div>{% endif %}
+                {% endfor %}
   </div>
   <div class="sec">
     <h1 class="heading"><span class="greenshade">LIVE </span>1:1 Mock Interviews by experts</h1>
@@ -396,7 +274,8 @@
 
       <div class="row mt-3">
         <div class="col text-center">
-          © 2020 InsideUG. All Rights Reserved
+          Built with <span style="color: red;">❤</span> by Akshat Khanna<br><br>
+        © 2020 InsideUG. All Rights Reserved
         </div>
       </div>
     </div>

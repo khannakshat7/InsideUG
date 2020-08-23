@@ -35,7 +35,7 @@
           </li>
         </ul>
         {% if user.is_authenticated %}
-          <p class="greenshade m-0" style="font-weight: 600;">Welcome, {{ user }}</p><form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'logout' %}">
+          <p class="greenshade m-0" style="font-weight: 600;">Welcome, {{ user.email }}</p><form class="form-inline my-2 my-lg-0 ml-4" action="{% url 'logout' %}">
             <button class="btn btn-secondary my-2 my-sm-0 nav-button" type="submit">Logout</button>
           </form>
         {% else %}
@@ -83,6 +83,7 @@
 
     <div class="row mt-3">
       <div class="col text-center">
+        Built by Akshat Khanna with ❤ <br>
         © 2020 InsideUG. All Rights Reserved
       </div>
     </div>

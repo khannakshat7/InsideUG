@@ -1,13 +1,15 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
-
+from django.contrib.auth.decorators import login_required
 from InsideUGApp.forms import UserForm
 from InsideUGApp.models import Course,Books
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    course = Course.objects.all()[:8]
+    books = Books.objects.all()[:8]
+    return render(request,'index.html',{"courses":course,"books":books})
 
 def books(request):
     all_books = Books.objects.all()
@@ -135,3 +137,10 @@ def register(request):
 def logoutuser(request):
     logout(request)
     return redirect('/')
+
+@login_required
+def MBAFile(request):
+    if (request.user.is_authenticated):
+        return redirect("../media/Marketing_Dossier.pdf")
+    else:
+        return redirect("login")

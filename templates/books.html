@@ -47,66 +47,19 @@
                         <h2 class="heading more px-5" style="margin-top: -80px;">Top Books</h2>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
 
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-prop m-0">
-                            <img src="{% static 'img/books.svg' %}" class="card-img-top" alt="">
-
-                        </div>
-                    </div>
-                </div>
+                {% for book in books %}
+                        {% if forloop.first %}<div class="row mt-5">{% endif %}
+                            <div class="col-md-4">
+                                <a class="cat" href="{{book.link}}" target="blank">
+                                <div class="card card-prop m-0">
+                                    <img src="../media/{{book.smallImage}}" class="card-img-top" alt="">
+                                </div>
+                            </a>
+                            </div>
+                        {% if forloop.counter|divisibleby:3 %}</div><div class="row mt-5">{% endif %}
+                        {% if forloop.last %}</div>{% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
